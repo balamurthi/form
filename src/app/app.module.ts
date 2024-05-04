@@ -1,18 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { WebcamModule } from 'ngx-webcam';
 
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 import { AppComponent } from './app.component';
+import { VisitorFormComponent } from './visitor-form/visitor-form.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { VisitorCardServiceService } from './Services/visitor-card-service.service';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VisitorFormComponent,
+ 
   ],
   imports: [
+  
     BrowserModule,
-    AppRoutingModule
+    FormsModule ,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    WebcamModule
+
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync(),
+    VisitorCardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
