@@ -99,3 +99,4 @@ public service : VisitorCardServiceService| undefined;
     window.print();
   }
 }
+
